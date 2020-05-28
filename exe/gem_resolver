@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# resolves gems and paths according to webpacker,yml
+# To add gem and path to asset to resolve config you need to path the name of gem like this:
+# @example
+# resolved_gems:
+#     <gem name>:
+#       - 'app/assets/'
+require 'webpacker_assets'
+
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+
+webpacker_file = File.open('config/webpacker.yml')
+
+p WebpackerAssets::GemPathResolver.new(ENV['RAILS_ENV'], webpacker_file)

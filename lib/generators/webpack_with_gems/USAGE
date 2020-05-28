@@ -1,0 +1,10 @@
+Description:
+    Создает файлы, которые помогают добавлять пути к webpack для резолвинга
+
+Example:
+    rails generate webpack_with_gems:install
+
+    This will create:
+        config/webpack/loaders/gem.js
+    This will change:
+        config/webpack/environment.js
