@@ -1,8 +1,5 @@
 # WebpackerAssets
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/webpacker_assets`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Adds generator for helping to resolve js and style files from gems in webpacker
 
 ## Installation
 
@@ -19,10 +16,16 @@ And then execute:
 Or install it yourself as:
 
     $ gem install webpacker_assets
-
+## Requirements
+    
+    rails >= 5.1
+    webpacker
+    
+    
 ## Usage
 
-TODO: Write usage instructions here
+1. Install gem
+2. Run `rails g webpack_with_gems:install`
 
 ## Development
 
@@ -32,7 +35,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/webpacker_assets.
+Bug reports and pull requests are welcome on GitHub at https://github.com/01ghost13/webpacker_assets
 
 ## License
 
