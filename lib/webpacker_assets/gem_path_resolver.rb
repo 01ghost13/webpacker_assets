@@ -9,12 +9,14 @@ module WebpackerAssets
     end
 
     def to_json
+      return '' if @gems.nil?
+
       JSON.dump(gems: resolve_gems(@gems))
     end
 
     private
       def resolve_gem_path(gem)
-        return if gem.blank?
+        return [] if gem.nil?
         gem_path = Gem.loaded_specs[gem]&.full_gem_path
         if gem_path.present?
           gem_path
@@ -26,7 +28,7 @@ module WebpackerAssets
       def resolve_gems(config)
         config.reduce([]) do |result, (gem_name, paths_to_assets)|
           gem_full_path = resolve_gem_path(gem_name)
-          next if gem_full_path.blank?
+          next if gem_full_path.nil?
 
           paths_to_assets.each do |path_to_assets|
             last_folder_name = File.basename(path_to_assets)
