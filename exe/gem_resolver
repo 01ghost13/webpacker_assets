@@ -11,6 +11,9 @@ require 'webpacker_assets'
 
 ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
 
-webpacker_file = File.open('config/webpacker.yml')
-
-p WebpackerAssets::GemPathResolver.new(ENV['RAILS_ENV'], webpacker_file)
+begin
+  webpacker_file = File.open('config/webpacker.yml')
+  p WebpackerAssets::GemPathResolver.new(ENV['RAILS_ENV'], webpacker_file)
+rescue LoadError
+  'webpacker.yml was not found'
+end

@@ -28,8 +28,6 @@ Gem::Specification.new do |spec|
   end
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  p spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  p spec.files
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency     'rails', '>= 5.1'
